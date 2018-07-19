@@ -188,3 +188,4 @@ if __name__ == '__main__':
     tree.delete(10)
     tree.inorder()
     tree.preorder()
+    print('\n')
