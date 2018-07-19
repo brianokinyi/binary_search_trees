@@ -1,3 +1,9 @@
+# When I wrote this program, only God and I knew it. Now, only God knows
+#
+# 
+# AURTHOR: Brian Okinyi <brianokinyi.bo@gmail.com>
+# 
+# 
 # This program illustrates an example of Binary Search Tree using Python
 # Binary Search Tree, is a node-based binary tree data structure which has the following properties:
 #
@@ -163,29 +169,58 @@ if __name__ == '__main__':
     tree.insert(7)
     tree.insert(15)
     tree.insert(13)
-    print(tree.find(1))
-    print(tree.find(12))
-    ''' Following tree is getting created:
-                    10
-                 /      \
-               5         12
-              / \           \
-            4     8          20
-                 /          /
-                7         15
-                         /
-                       13
-    '''
+    tree.inorder()
+    # print(tree.find(1))
+    # print(tree.find(12))
 
-    tree.preorder()
-    tree.inorder()
-    tree.postorder()
-    print('\n\nAfter deleting 20')
-    tree.delete(20)
-    tree.inorder()
-    tree.preorder()
-    print('\n\nAfter deleting 10')
-    tree.delete(10)
-    tree.inorder()
-    tree.preorder()
-    print('\n')
+    # ''' 
+    #     Following tree is getting created:
+    #                 10
+    #              /      \
+    #            5         12
+    #           / \           \
+    #         4     8          20
+    #              /          /
+    #             7         15
+    #                      /
+    #                    13
+    # '''
+
+    # tree.preorder()
+    # tree.inorder()
+    # tree.postorder()
+    # print('\n\nAfter deleting 20')
+    # tree.delete(4)
+    # tree.inorder()
+    # tree.preorder()
+    # print('\n\nAfter deleting 10')
+    # tree.delete(10)
+    # tree.inorder()
+    # tree.preorder()
+    # print('\n')
+    option = int(input('\n1. Insert\n2. Delete\n3. Search\n4. Preorder\n5. Inorder\n6. Postorder\n'))
+
+    if option == 1:
+        value = int(input('Enter an integer to insert\n'))
+        tree.insert(value)
+        tree.inorder()
+
+    elif option == 2:
+        value = int(input('Enter an integer to delete\n'))
+        tree.delete(value)
+        tree.inorder()
+
+    elif option == 3:
+        value = int(input("What are you searching for?\n"))
+        print(tree.find(value))
+
+    elif option == 4:
+        tree.preorder()
+
+    elif option == 5:
+        tree.inorder()
+        
+    elif option == 6:
+        tree.postorder()
+    else:
+        print("Ooops! Invalid input!")         
